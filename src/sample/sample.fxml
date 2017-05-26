@@ -31,19 +31,28 @@
             styleClass="Button"
             prefWidth="100"
             prefHeight="100"
+            fx:id="btnDEC"
+            text="#"
+            onAction="#handleDec"
             ></Button>
     <Button
             GridPane.columnIndex="1"
             GridPane.rowIndex="2"
+            fx:id="btnGiaiThua"
+            text="X!"
             styleClass="Button"
             prefWidth="100"
-            prefHeight="100"></Button>
+            prefHeight="100"
+            onAction="#handleGiaiThua"></Button>
     <Button
             GridPane.columnIndex="2"
             GridPane.rowIndex="2"
             styleClass="Button"
             prefWidth="100"
-            prefHeight="100"></Button>
+            prefHeight="100"
+            text="1/x"
+            fx:id="btn1chiax"
+            onAction="#handle1ChiaX"></Button>
         <Button
                 fx:id="btnDel"
                 text="DEL"

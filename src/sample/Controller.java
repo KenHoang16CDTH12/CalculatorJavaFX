@@ -5,11 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
+import java.text.DecimalFormat;
+
 
 public class Controller {
     @FXML
     private TextField lblResult;
-
     private double number1 = 0;
     private String operator = "";
     private boolean start = true;
@@ -58,6 +59,33 @@ public class Controller {
         if (lblResult.getText().indexOf(".") < 0) {
             lblResult.setText(lblResult.getText() + ".");
         }
+    }
+
+    public void handleGiaiThua(ActionEvent event) {
+        double resultMain = 1;
+        number1 = Double.parseDouble(lblResult.getText());
+        for (int i = 0; i <= number1; i++) {
+            resultMain = factorial(i);
+        }
+        lblResult.setText(resultMain + "");
+    }
+
+    public void handle1ChiaX(ActionEvent event) {
+
+        number1 = Double.parseDouble(lblResult.getText());
+        lblResult.setText(1/number1 +"");
+    }
+
+    public void handleDec(ActionEvent event) {
+        DecimalFormat dec = new DecimalFormat("#");
+        double decResult = Double.parseDouble(lblResult.getText());
+        lblResult.setText(dec.format(decResult) + "");
+    }
+    public static double factorial(double number) {
+        if (number <= 1)
+            return 1;
+        else
+            return number * factorial(number - 1);
     }
 }
 
