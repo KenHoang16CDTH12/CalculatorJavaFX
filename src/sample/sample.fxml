@@ -8,20 +8,36 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
 <AnchorPane
         xmlns:fx="http://javafx.com/fxml" fx:controller="sample.Controller"
         fx:id="root">
-    <TextField
-            fx:id="lblResult"
-            editable="false"
-            alignment="BOTTOM_RIGHT"
-            layoutX="10" layoutY="14.0"
-            prefHeight="35.0" prefWidth="380"
-            styleClass="lblResult"
-            text="0"
+    <StackPane AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+        <VBox>
+            <TextField
+                    fx:id="lblResult"
+                    editable="false"
+                    styleClass="lblResult"
+                    text="0"
+                    alignment="BOTTOM_RIGHT"
             >
-    </TextField>
-    <StackPane AnchorPane.topAnchor="100"   AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+            </TextField>
+            <Label
+                    fx:id="lblSyntax"
+                    styleClass="lblSyntax"
+                    alignment="BOTTOM_CENTER"
+            ></Label>
+            <Button
+                    fx:id="btnTheme"
+                    text="Change theme"
+                    styleClass="Button"
+                    onAction="#changeTheme">
+
+            </Button>
+        </VBox>
+    </StackPane>
+
+    <StackPane AnchorPane.topAnchor="135"   AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
     <GridPane
             hgap="10"
             vgap="10">
@@ -53,7 +69,7 @@
             text="1/x"
             fx:id="btn1chiax"
             onAction="#handle1ChiaX"></Button>
-        <Button
+    <Button
                 fx:id="btnDel"
                 text="DEL"
                 GridPane.columnIndex="3"
@@ -154,7 +170,7 @@
             onAction="#processNumpad"></Button>
     <Button
             fx:id="btnDiv"
-            text=":"
+            text="/"
             GridPane.columnIndex="3"
             GridPane.rowIndex="3"
             styleClass="Button"
@@ -163,7 +179,7 @@
             onAction="#processOperator"></Button>
     <Button
             fx:id="btnMul"
-            text="."
+            text="*"
             GridPane.columnIndex="3"
             GridPane.rowIndex="4"
             styleClass="Button"
@@ -190,7 +206,7 @@
             onAction="#processOperator"></Button>
     <Button
             fx:id="btnDot"
-            text=","
+            text="."
             GridPane.columnIndex="0"
             GridPane.rowIndex="6"
             styleClass="Button"

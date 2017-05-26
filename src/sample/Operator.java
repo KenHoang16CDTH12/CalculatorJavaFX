@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 /**
  * Created by kenhoang on 5/22/17.
  */
-public class Model {
+public class Operator {
 
     public Double calculate(double number1, double number2, String operator) {
         switch (operator) {
@@ -13,9 +13,9 @@ public class Model {
                 return number1 + number2;
             case "-":
                 return number1 - number2;
-            case ".":
+            case "*":
                 return number1 * number2;
-            case ":":
+            case "/":
                 if (number2 == 0)
                     return 0.0;
 
